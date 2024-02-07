@@ -8,7 +8,7 @@ metadata:
 spec: 
   containers:
     - name: nginx
-      image: macharavikishore/web:k8-1
+      image: macharavikishore/web:v4
       imagePullPolicy: Always
       ports:
         - containerPort: 80
