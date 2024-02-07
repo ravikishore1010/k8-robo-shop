@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mongodb
+  labels:
+    sever: catalogue
+    tier: app
+spec: 
+  containers:
+    - name: nginx
+      image: macharavikishore/mongodb:k8
+      imagePullPolicy: Always
+      ports:
+        - containerPort: 8080
+      resources:
+        requests:
+          memory: "100Mi"
+          cpu: "100m"  
+        limits:
+          memory: "128Mi"
+          cpu: "250m"  
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongodb-service
+spec:
+  selector:
+    sever: catalogue
+    tier: app
+
+  ports:
+   - port: 80
+     targetPort: 8080
