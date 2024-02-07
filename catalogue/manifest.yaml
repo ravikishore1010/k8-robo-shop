@@ -8,7 +8,7 @@ metadata:
 spec: 
   containers:
     - name: nginx
-      image: macharavikishore/mongodb:k8
+      image: macharavikishore/catalogue:k8
       imagePullPolicy: Always
       ports:
         - containerPort: 8080
