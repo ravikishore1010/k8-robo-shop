@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: mongodb
+  name: catalogue
   labels:
     sever: catalogue
     tier: app
