@@ -3,33 +3,26 @@ kind: Pod
 metadata:
   name: mongodb
   labels:
-    sever: mongodb
+    server: mongodb  # Corrected label key
     tier: db
-spec: 
+spec:
   containers:
-    - name: nginx
+    - name: mongodb  # Corrected container name to match the image
       image: macharavikishore/mongodb:v1
       imagePullPolicy: Always
       ports:
-        - containerPort: 27017 
-      resources:
-        requests:
-          memory: "64Mi"
-          cpu: "100m"  
-        limits:
-          memory: "128Mi"
-          cpu: "250m"  
+        - containerPort: 27017
+
 
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: mongodb-service
+  name: mongodb
 spec:
   selector:
-    sever: mongodb
+    server: mongodb
     tier: db
-
   ports:
-   - port: 80
-     targetPort: 27017
+    - port: 27017
+      targetPort: 27017
