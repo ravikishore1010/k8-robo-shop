@@ -8,7 +8,7 @@ metadata:
 spec:
   containers:
     - name: redis
-      image: macharavikishore/redis
+      image: macharavikishore/redis:v1
       imagePullPolicy: Always
       ports:
         - containerPort: 6379
